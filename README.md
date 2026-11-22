@@ -97,15 +97,26 @@ dsh plugin --profile web add github:GandalfGao/dsh-plugin-drag-reference
 
 > **注意**：两种方式**不要同时用**——都会插入 `drag-reference` 行，Loader 会报重复 id。切换前把另一种撤掉再重启。
 
-## 发布
+## 在 DSH 里发现它（插件市场索引）
 
-包已经是 bundle 形态，可以直接从 GitHub 安装：
+索引已经托管在 GitHub Pages：
 
-```powershell
-dsh plugin --profile web add github:GandalfGao/dsh-plugin-drag-reference
+```
+https://gandalfgao.github.io/dsh-plugin-drag-reference/market/index.json
 ```
 
-`market/index.json` 是自建的插件市场索引（format-1，尚未托管）：要发 npm 或自建索引时，按它把 `publishTimestamp` 换成真值，再把 `market/` 放到 https 静态站上即可。
+在 DSH 里加一次就能搜到：
+
+1. **Plugins** → **Experimental plugins** → 打开 **Custom plugin indexes**
+2. 进 **Discover** → **Add index source** → 粘贴上面的 URL
+3. 搜「拖拽引用」或 `drag-reference` → **Install**
+
+也可以跳过索引，直接从 npm 或 GitHub 装：
+
+```powershell
+dsh plugin --profile web add dsh-plugin-drag-reference
+dsh plugin --profile web add github:GandalfGao/dsh-plugin-drag-reference
+```
 
 ## 卸载
 
