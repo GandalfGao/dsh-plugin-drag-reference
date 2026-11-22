@@ -20,14 +20,18 @@
         "zh": "把右侧文件树里的文件/文件夹行拖进对话框，或右键该行，插入一个 @路径 引用芯片。"
       },
       "icon": "icons/drag-reference.svg",
-      "author": "dsh-plugin-drag-reference contributors",
+      "author": "gandalfgao",
+      "homepage": "https://github.com/GandalfGao/dsh-plugin-drag-reference",
+      "repository": {
+        "url": "https://github.com/GandalfGao/dsh-plugin-drag-reference"
+      },
       "metadata": {
         "keywords": ["sidebar", "reference", "drag-and-drop", "file"]
       },
       "versions": [
         {
           "version": "0.1.0",
-          "publishTimestamp": 1795244740,
+          "publishTimestamp": 1795337154,
           "source": {
             "type": "npm"
           },

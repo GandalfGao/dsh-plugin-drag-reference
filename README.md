@@ -1,5 +1,7 @@
 # dsh-plugin-drag-reference
 
+[![npm](https://img.shields.io/npm/v/dsh-plugin-drag-reference)](https://www.npmjs.com/package/dsh-plugin-drag-reference)
+
 把右侧「文件」页里的**某一行**拖进对话框（或在行上右键），就在输入框里插入一个 `@路径` 引用芯片。
 
 ## 和 [dsh-drag](https://github.com/ttmouse/dsh-drag) 的区别
@@ -48,11 +50,19 @@
 
 ### 方式一：bundle 安装（推荐）
 
-```powershell
+已发布到 npm：
+
+```
+dsh plugin --profile web add dsh-plugin-drag-reference
+```
+
+或直接从 GitHub 装（不经过 npm）：
+
+```
 dsh plugin --profile web add github:GandalfGao/dsh-plugin-drag-reference
 ```
 
-或者手动把包名加进 profile `package.json` 的 `dsh.profile.bundles`，然后重启应用：
+也可以手动把包名加进 profile `package.json` 的 `dsh.profile.bundles`，然后重启应用：
 
 ```json
 "dsh": { "profile": { "bundles": ["dsh-plugin-drag-reference"] } }
