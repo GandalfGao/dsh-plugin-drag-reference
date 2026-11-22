@@ -46,25 +46,37 @@
 
 ## 安装方式
 
-两种装法选一种，**不要同时用**（会插入重复的 `drag-reference` 行）：bundle 形态（插件面板 / 市场安装），或下面这种本地 `link:` 开发装。作者开发机用的是后者，路径按你自己的改。
+### 方式一：bundle 安装（推荐）
 
-插件包通过 `link:` 依赖链进 `desktop` profile：
+```powershell
+dsh plugin --profile web add github:GandalfGao/dsh-plugin-drag-reference
+```
+
+或者手动把包名加进 profile `package.json` 的 `dsh.profile.bundles`，然后重启应用：
 
 ```json
-// C:\Users\DELL\.dsh\profiles\desktop\package.json
+"dsh": { "profile": { "bundles": ["dsh-plugin-drag-reference"] } }
+```
+
+### 方式二：本地开发装（要改代码时用）
+
+把插件目录 `link:` 进 profile，这样改完不用重装：
+
+```json
+// <你的用户目录>\.dsh\profiles\desktop\package.json
 "dependencies": {
-  "dsh-plugin-drag-reference": "link:D:/测试程序/dhs/dsh-plugin-drag-reference"
+  "dsh-plugin-drag-reference": "link:<插件目录绝对路径，用正斜杠>"
 }
 ```
 
 ```yaml
-# C:\Users\DELL\.dsh\profiles\desktop\cordis.patch.yml
+# <你的用户目录>\.dsh\profiles\desktop\cordis.patch.yml
 - insert:
     - id: drag-reference
       name: dsh-plugin-drag-reference
 ```
 
-安装命令（profile 目录下，用随桌面端打包的 node + pnpm）：
+然后在 profile 目录下装依赖（用桌面端自带的 node + pnpm）：
 
 ```powershell
 & "$env:USERPROFILE\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\bin\node.exe" `
@@ -73,7 +85,7 @@
 
 因为依赖是 `link:`，改完 `lib/client.js` 不需要重新安装；重新加载页面即可生效。
 
-> **注意**：上面这条是"本地开发安装"（手写 row）。这个包同时已经具备**bundle 形态**（`dsh.bundle.patch` → `cordis.patch.yml`），那是给插件市场安装用的。两种方式**不要同时用**，否则会插入重复的 `drag-reference` 行报错。要切到 bundle 形态：把包名加进 profile `package.json` 的 `dsh.profile.bundles`、删掉上面那段 `- insert:`，然后重启一次应用。
+> **注意**：两种方式**不要同时用**——都会插入 `drag-reference` 行，Loader 会报重复 id。切换前把另一种撤掉再重启。
 
 ## 发布
 
