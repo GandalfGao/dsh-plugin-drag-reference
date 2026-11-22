@@ -75,9 +75,15 @@
 
 > **注意**：上面这条是"本地开发安装"（手写 row）。这个包同时已经具备**bundle 形态**（`dsh.bundle.patch` → `cordis.patch.yml`），那是给插件市场安装用的。两种方式**不要同时用**，否则会插入重复的 `drag-reference` 行报错。要切到 bundle 形态：把包名加进 profile `package.json` 的 `dsh.profile.bundles`、删掉上面那段 `- insert:`，然后重启一次应用。
 
-## 发布到插件市场
+## 发布
 
-见 [PUBLISHING.md](PUBLISHING.md)：发 npm → 托管 `market/index.json` → 用户在你的 Discover 里加索引 URL 就能搜到并安装。
+包已经是 bundle 形态，可以直接从 GitHub 安装：
+
+```powershell
+dsh plugin --profile web add github:GandalfGao/dsh-plugin-drag-reference
+```
+
+`market/index.json` 是自建的插件市场索引（format-1，尚未托管）：要发 npm 或自建索引时，按它把 `publishTimestamp` 换成真值，再把 `market/` 放到 https 静态站上即可。
 
 ## 卸载
 
