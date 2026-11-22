@@ -1,12 +1,14 @@
 {
   "name": "dsh-plugin-drag-reference",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Drag a file or folder row out of the right Sidebar tree into the composer (or right-click it) to insert an @path reference chip.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
     "./package.json": "./package.json"
   },
   "dsh": {
@@ -36,6 +38,8 @@
     "lib/index.js",
     "lib/client.js",
     "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Drag reference",
+    "description": "Drag a file or folder row from the Files panel into the composer, or right-click it, to insert an @path reference chip. Falls back to plain text when the chip channel is refused."
+  }
+}
