@@ -1,0 +1,41 @@
+{
+  "format": 1,
+  "title": {
+    "en": "drag-reference index",
+    "zh": "拖拽引用索引"
+  },
+  "description": {
+    "en": "A single-plugin index for the Sidebar drag-reference plugin.",
+    "zh": "侧栏拖拽引用插件的单插件索引。"
+  },
+  "plugins": [
+    {
+      "name": "dsh-plugin-drag-reference",
+      "title": {
+        "en": "Drag reference",
+        "zh": "拖拽引用"
+      },
+      "description": {
+        "en": "Drag a file or folder row out of the right Sidebar tree into the composer, or right-click it, to insert an @path reference chip.",
+        "zh": "把右侧文件树里的文件/文件夹行拖进对话框，或右键该行，插入一个 @路径 引用芯片。"
+      },
+      "icon": "icons/drag-reference.svg",
+      "author": "dsh-plugin-drag-reference contributors",
+      "metadata": {
+        "keywords": ["sidebar", "reference", "drag-and-drop", "file"]
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1795244740,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.5 <0.3.0-0"
+          }
+        }
+      ]
+    }
+  ]
+}

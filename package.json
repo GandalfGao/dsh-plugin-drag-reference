@@ -1,0 +1,55 @@
+{
+  "name": "dsh-plugin-drag-reference",
+  "version": "0.1.0",
+  "description": "Drag a file or folder row out of the right Sidebar tree into the composer (or right-click it) to insert an @path reference chip.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "node": ">=24",
+    "dsh": ">=0.2.1-rc.5 <0.3.0-0"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "dsh-bundle",
+    "sidebar",
+    "file-reference",
+    "drag-and-drop"
+  ],
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "author": "GandalfGao",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GandalfGao/dsh-plugin-drag-reference.git"
+  },
+  "homepage": "https://github.com/GandalfGao/dsh-plugin-drag-reference#readme",
+  "bugs": {
+    "url": "https://github.com/GandalfGao/dsh-plugin-drag-reference/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

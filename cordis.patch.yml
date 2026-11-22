@@ -1,0 +1,13 @@
+# Bundle patch: the layer this package contributes to a profile that selects it.
+#
+# A market install appends this package to `dsh.profile.bundles` in the profile's
+# package.json; the launcher then applies this file as one bundle layer, which
+# inserts the plugin row. Nothing here names the profile, so the same file works
+# for every install.
+#
+# Do not also keep a hand-written `- insert:` row for this plugin in the profile's
+# own cordis.patch.yml: both would insert `drag-reference` and the Loader rejects
+# the duplicate id. Use the bundle entry *or* the manual row, never both.
+- insert:
+    - id: drag-reference
+      name: dsh-plugin-drag-reference
